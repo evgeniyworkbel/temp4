@@ -1,0 +1,23 @@
+{
+  "name": "frontend-project-12",
+  "version": "1.0.0",
+  "description": "chat",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgeniyworkbel/frontend-project-12.git"
+  },
+  "author": "Evgeniy Samuta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evgeniyworkbel/frontend-project-12/issues"
+  },
+  "homepage": "https://github.com/evgeniyworkbel/frontend-project-12#readme",
+  "dependencies": {
+    "@hexlet/chat-server": "^1.1.6"
+  }
+}
