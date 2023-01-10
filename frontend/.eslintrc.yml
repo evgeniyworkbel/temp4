@@ -6,6 +6,8 @@ extends:
   - airbnb
 overrides: []
 parserOptions:
+  ecmaFeatures:
+    jsx: true
   ecmaVersion: latest
   sourceType: module
 plugins:
