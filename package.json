@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "postinstall": "npm ci --prefix frontend",
+    "build": "npm run build --prefix frontend",
     "start": "npx start-server -s ./frontend/build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
