@@ -1,10 +1,11 @@
 {
-  "name": "frontend-project-12",
+  "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "chat",
+  "description": "[![Actions Status](https://github.com/evgeniyworkbel/frontend-project-12/workflows/hexlet-check/badge.svg)](https://github.com/evgeniyworkbel/frontend-project-12/actions)",
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "npx start-server -s ./frontend/build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
