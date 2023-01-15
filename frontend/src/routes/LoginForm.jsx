@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
+import { loginFormSchema } from '../schemas/index';
 
 function Login() {
   const formik = useFormik({
@@ -8,6 +9,7 @@ function Login() {
       username: '',
       password: '',
     },
+    validationSchema: loginFormSchema,
     onSubmit: (values) => {
       console.log(values);
     },
