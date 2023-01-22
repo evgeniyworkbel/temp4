@@ -3,20 +3,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
+
 import Root from './routes/Root';
 import ErrorPage from './routes/Error-page';
 import LoginForm from './routes/LoginForm';
-import './App.css';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: '/login',
-    element: <LoginForm />,
+    children: [
+      {
+        path: '/login',
+        element: <LoginForm />,
+      },
+    ],
   },
 ]);
 
