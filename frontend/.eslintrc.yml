@@ -12,4 +12,6 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {}
+rules:
+  import/extensions: 0
+  react/prop-types: 0
