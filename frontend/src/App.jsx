@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import AuthContext from './contexts/index.jsx';
-import Root from './routes/Root.jsx';
+import Root, { loader as rootLoader } from './routes/Root.jsx';
 import ErrorPage from './routes/Error-page.jsx';
 import LoginForm from './routes/LoginForm.jsx';
 
@@ -18,7 +18,7 @@ function AuthProvider({ children }) {
     setLoggedIn(false);
   };
 
-  // Look at https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
+  // Look about rule at https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
   const authServices = useMemo(() => ({ loggedIn, logIn, logOut }), []);
 
   return (
@@ -33,9 +33,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
+    loader: rootLoader,
     children: [
       {
-        path: '/login',
+        path: 'login',
         element: <LoginForm />,
       },
     ],

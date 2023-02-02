@@ -1,11 +1,21 @@
-import React, { useContext } from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
+import React from 'react';
+import { Outlet, redirect } from 'react-router-dom';
 import { Navbar, Container } from 'react-bootstrap';
 
-import AuthContext from '../contexts/index.jsx';
+import useAuth from '../hooks/index.jsx';
+
+export async function loader() {
+  const user = localStorage.getItem('user');
+  if (!user) {
+    throw redirect('/login');
+  }
+
+  return null;
+}
 
 function Root() {
-  const auth = useContext(AuthContext);
+  const auth = useAuth();
+  console.log(auth);
 
   return (
     <div className="d-flex flex-column h-100">
@@ -15,7 +25,7 @@ function Root() {
         </Container>
       </Navbar>
       <div id="main" className="h-100">
-        {auth.loggedIn ? <Outlet /> : <Navigate to="/login" replace />}
+        <Outlet />
       </div>
     </div>
   );
